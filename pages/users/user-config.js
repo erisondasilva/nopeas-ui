@@ -18,7 +18,7 @@ export const userConfig = {
         { Header: "Nome", accessor: "realName", width: "30%" },
         { Header: "Usuário", accessor: "username", width: "30%" },
         { Header: "Perfil", accessor: "roles", width: "30%" },
-        { Header: "Estado", accessor: "active", width: "10%" },
+        { Header: "Estado", accessor: "status", width: "10%" },
     ],
 
     mapRowData: (item) => ({
