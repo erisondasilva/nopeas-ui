@@ -6,13 +6,18 @@ export const roleConfig = {
     entityNamePlural: "Perfis de Acesso",
     api: ServiceApi.auth.ROLES.path,
     fields: [
-        { label: "Perfil", name: "name", type: "text", editable: false,  },
-        { label: "Permissões", name: "permissionIds", type: "rest-select", required: true, editable: true,
-            apiPath: ServiceApi.auth.PERMISSIONS.path, checkbox:true, multiple: true,
+        { label: "Perfil", name: "name", type: "text", editable: false,  width: "320px"  },
+        { label: "Permissões", name: "permissionIds", type: "rest-select", required: false, editable: true,
+            apiPath: ServiceApi.auth.PERMISSIONS.path, checkbox:true, multiple: true,  width: "320px" 
         },
     ],
     columns: [
         { Header: "Perfil", accessor: "name", width: "30%" },
+        { Header: "Permissões", accessor: "permissionIds", width: "70%",
+            Cell: ({ value }) => {
+                return JSON.stringify(value);
+            }
+        },
     ],
 
     mapRowData: (item) => ({

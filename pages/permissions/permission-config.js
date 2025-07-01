@@ -6,8 +6,8 @@ export const permissionConfig = {
     api: ServiceApi.auth.PERMISSIONS.path,
     deletable: true,
     fields: [
-        { label: "Name", name: "name", type: "text", required: true, editable: true },
-        { label: "Description", name: "description", type: "textarea", required: false, editable: true },
+        { label: "Name", name: "name", type: "text", required: true, editable: true, width: "300px" },
+        { label: "Description", name: "description", type: "textarea", required: false, editable: true,  width: "300px" },
     ],
     columns: [
         { Header: "Name", accessor: "name", width: "30%" },
