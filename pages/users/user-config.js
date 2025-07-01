@@ -12,13 +12,11 @@ export const userConfig = {
             type: "rest-select", apiPath: ServiceApi.auth.ROLES.path
          },
         { label: "Senha", name: "password", type: "password", required: true, editable: true },
-        { label: "Inativo", name: "active", type: "boolean", required: false, editable: true },
     ],
     columns: [
         { Header: "Nome", accessor: "realName", width: "30%" },
         { Header: "Usuário", accessor: "username", width: "30%" },
         { Header: "Perfil", accessor: "roles", width: "30%" },
-        { Header: "Estado", accessor: "active", width: "10%" },
     ],
 
     mapRowData: (item) => ({
