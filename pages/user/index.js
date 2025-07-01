@@ -6,8 +6,8 @@ import Grid from "@mui/material/Grid";
 import MDBox from "shared-ui/components/md/MDBox";
 
 // Settings page components
-import Header from "shared-ui/pages/usuario/components/Header";
-import ChangePassword from "shared-ui/pages/usuario/components/ChangePassword";
+import Header from "shared-ui/pages/user/components/Header";
+import ChangePassword from "shared-ui/pages/user/components/ChangePassword";
 import DashboardNavbar from "shared-ui/layout/DashboardNavbar";
 import Footer from "shared-ui/layout/Footer";
 import DashboardLayout from "shared-ui/layout/DashboardLayout";

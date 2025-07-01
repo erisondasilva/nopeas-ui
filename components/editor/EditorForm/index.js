@@ -15,7 +15,6 @@ function EditorForm({
         handleBackClick, setError, setSuccess, 
         updateCallback, deleteCallback,
         renderFields,
-        customFieldRenderer,
     }) {
     const [localFormData, setLocalFormData] = useState({});
 
@@ -136,7 +135,7 @@ function EditorForm({
                                         localFormData[field.name],
                                         handleFieldChange,
                                         !!entityId,
-                                        customFieldRenderer
+                                        registerConfig.customFieldRenderer
                                     )}
                                 </Grid>
                                 {field.breakline && (

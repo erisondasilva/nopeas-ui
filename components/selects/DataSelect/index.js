@@ -20,7 +20,7 @@ function DataSelect({ url, setSelected, filter, checkbox, itemsRender, ...props 
                 ? props.selected
                 : (props.multiple ? [] : "")
         );
-    }, [props.selected]);
+    }, [props.selected, props.multiple]);
 
     useEffect(() => {
         if(url) {
@@ -88,6 +88,7 @@ function DataSelect({ url, setSelected, filter, checkbox, itemsRender, ...props 
                       "& .MuiInputBase-root": {
                           height: "100%",
                       },
+                      minWidth: props.minWidth ? props.minWidth : "250px",
                   }}>
               {!props.required &&
                 <MenuItem value="">&nbsp;</MenuItem>

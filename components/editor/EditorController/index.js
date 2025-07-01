@@ -88,7 +88,7 @@ function EditorController({ registerConfig, subtitle, renderFilter, renderEditor
                     <MDBox display="flex" alignItems="center" justifyContent="center">
                         <Card>
                             <MDBox sx={{ p:4, maxWidth: 820 }}>
-                                <MDBox>
+                                <MDBox ml={2}>
                                     <MDTypography variant="h5" fontWeight="medium">
                                         {selectedData ? `Editar ${registerConfig.entityName}` : `Criar ${registerConfig.entityName}`}
                                     </MDTypography>

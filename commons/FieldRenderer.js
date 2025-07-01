@@ -244,19 +244,6 @@ export const FieldRenderer = {
                     </MDBox>
                 );
 
-            case "permissions-select":
-                return (
-                    <PermissionsDataSelect
-                        name={field.name}
-                        label={field.label}
-                        filter={field.filter}
-                        required={field.required}
-                        disabled={isEdit && !isEditable}
-                        setSelected={handleFieldChange}
-                        selected={fieldValue}
-                    />
-                );
-
             default:
                 if (customFieldRenderer) {
                     return customFieldRenderer.renderField(field, currentValue, handleFieldChange, isEdit);

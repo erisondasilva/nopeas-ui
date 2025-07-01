@@ -18,9 +18,6 @@ import colors from "shared-ui/assets/theme-dark/base/colors";
 import borders from "shared-ui/assets/theme-dark/base/borders";
 import boxShadows from "shared-ui/assets/theme-dark/base/boxShadows";
 
-// Material Dashboard 3 PRO React Helper Function
-import rgba from "shared-ui/assets/theme-dark/functions/rgba";
-
 const { background, grey } = colors;
 const { borderWidth, borderRadius } = borders;
 const { xs } = boxShadows;

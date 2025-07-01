@@ -14,7 +14,7 @@ function RolesEditor() {
                 registerConfig={roleConfig}
             />
         <Footer/>
-    </DashboardLayout>
+        </DashboardLayout>
     );
 }
 
