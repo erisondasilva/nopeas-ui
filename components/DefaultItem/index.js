@@ -16,12 +16,16 @@ const DefaultItem = forwardRef(({ color="info", icon, title, description, ...res
       <Icon>{icon}</Icon>
     </MDBox>
     <MDBox ml={2} mt={0.5} lineHeight={1.4}>
+      {title && (
       <MDTypography display="block" variant="button" fontWeight="medium">
         {title}
       </MDTypography>
-      <MDTypography variant="button" fontWeight="regular" color="text">
-        {description}
-      </MDTypography>
+      )}
+      {description && (
+        <MDTypography variant="button" fontWeight="regular" color="text">
+          {description}
+        </MDTypography>
+      )}
     </MDBox>
   </MDBox>
 ));
