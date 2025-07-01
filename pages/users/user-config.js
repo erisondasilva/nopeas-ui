@@ -12,18 +12,18 @@ export const userConfig = {
             type: "rest-select", apiPath: ServiceApi.auth.ROLES.path
          },
         { label: "Senha", name: "password", type: "password", required: true, editable: true },
-        { label: "Inativo", name: "active", type: "boolean", required: false, editable: true },
+        { label: "Ativo", name: "active", type: "boolean", required: false, default: true },
     ],
     columns: [
         { Header: "Nome", accessor: "realName", width: "30%" },
         { Header: "Usuário", accessor: "username", width: "30%" },
         { Header: "Perfil", accessor: "roles", width: "30%" },
-        { Header: "Estado", accessor: "active", width: "10%" },
+        { Header: "Estado", accessor: "status", width: "10%" },
     ],
 
     mapRowData: (item) => ({
         ...item,
         roles: JSON.stringify(item.roles.map(role => role.name)),
-        active: item.active ? 'Ativo' : 'Inativo',
+        status: item.active ? 'Ativo' : 'Inativo',
     }),
 };
