@@ -62,12 +62,16 @@ function EditorController({ registerConfig, subtitle, renderFilter, renderEditor
                 {!showEditor ? (
                     <Card sx={{ p:3 }} >
                         <MDBox pt={3} px={3}>
+                            {registerConfig.entityNamePlural && (
                             <MDTypography variant="h5" fontWeight="medium">
                                 {registerConfig.entityNamePlural}
                             </MDTypography>
+                            )}
+                            {subtitle && (
                             <MDTypography variant="button" fontWeight="light"  color="secondary">
                                 {subtitle}
                             </MDTypography>
+                            )}
                         </MDBox>
                         {renderFilter && (
                             <MDBox mt={2} mx={3}>
