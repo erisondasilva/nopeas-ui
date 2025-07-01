@@ -232,6 +232,18 @@ export const FieldRenderer = {
                     />
                 );
 
+            case "permissions-select":
+                return (
+                    <PermissionsDataSelect
+                        name={field.name}
+                        label={field.label}
+                        required={field.required}
+                        disabled={isEdit && !isEditable}
+                        setSelected={handleFieldChange}
+                        selected={fieldValue}
+                    />
+                );
+
             case "display-only":
                 return (
                     <MDBox>

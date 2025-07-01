@@ -7,7 +7,7 @@ import axiosInstance from "shared-ui/commons/axiosInstance";
 import {ServiceApi} from "commons/enums/ServiceApi";
 import Grid from "@mui/material/Grid";
 
-function PermissionsDataSelect({ setSelected, formData, handleChange, ...props}) {
+function PermissionsDataSelect({ setSelected, selected, handleChange, ...props}) {
   const [checkboxOptions, setCheckboxOptions] = useState([]);
 
   const apiUrl = ServiceApi.auth.PERMISSIONS.path;
@@ -24,14 +24,14 @@ function PermissionsDataSelect({ setSelected, formData, handleChange, ...props})
   }, [null]);
 
   const isChecked = (id) => {
-    return formData?.permissionIds?.includes(id);
+    return selected?.includes(id);
   };
 
   const handleCheckboxChange = (id, checked) => {
     const updatedPermissions = checked
-      ? [...(formData.permissionIds || []), id] // Add the ID if checked
-      : formData.permissionIds.filter((permissionId) => permissionId !== id); // Remove the ID if unchecked
-        // callback to update the formData
+      ? [...(selected || []), id] // Add the ID if checked
+      : selected.filter((permissionId) => permissionId !== id);
+
       setSelected && setSelected("permissionIds", updatedPermissions);
   };
 
