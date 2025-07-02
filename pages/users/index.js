@@ -13,19 +13,6 @@ function UsersEditor() {
         <DashboardNavbar absolute={true}/>
             <EditorController
                 registerConfig={userConfig}
-
-                defaultFilterData={{ active: true }}
-                renderFilter={
-                    ({ filterData, setFilterData }) => {
-                    return (
-                        <EditorFilter
-                            filterData={filterData}
-                            setFilterData={setFilterData} 
-                            fields={[
-                                { label: "Ativos", name: "active", default: true, type: "boolean" },
-                            ]}/>
-                    );
-                }}
             />
         <Footer/>
     </DashboardLayout>
