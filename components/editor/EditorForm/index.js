@@ -82,9 +82,9 @@ function EditorForm({
             handleBackClick && handleBackClick(true);
             setSuccess && setSuccess(`Registro salvo com sucesso!`);
         } catch (error) {
-            console.error("Error saving data:", error.response.data);
+            console.error("Error saving data:", error.response?.data);
             if(setError) {
-                if(error?.response?.data && error.response.data.error) {
+                if(error?.response?.data && error?.response?.data?.error) {
                     setError(error.response.data.error);
                 } else {
                     setError("Erro ao salvar os dados. Tente novamente.");
