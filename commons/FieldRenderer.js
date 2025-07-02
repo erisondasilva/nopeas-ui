@@ -12,6 +12,7 @@ import CnpjInput from 'shared-ui/components/inputs/CnpjInput';
 import SwitchInput from 'shared-ui/components/inputs/SwitchInput';
 import RestDataSelect from 'shared-ui/components/selects/RestDataSelect';
 import PermissionsDataSelect from 'shared-ui/components/selects/PermissionsDataSelect';
+import DateInput from 'shared-ui/components/inputs/DateInput';
 
 /**
  * FieldRenderer - Utility class for rendering form fields based on configuration
@@ -76,7 +77,20 @@ export const FieldRenderer = {
 
             case "date":
                 return (
-                    <MDInput
+                    <DateInput
+                        label={field.label}
+                        name={field.name}
+                        required={field.required && !isEdit}
+                        disabled={isEdit && !isEditable}
+                        value={fieldValue}
+                        onChange={(e) => handleFieldChange(field.name, e.target?.value || "")}
+                        width={field.width || null}
+                    />
+                );
+
+            case "currency":
+                return (
+                    <CurrencyInput
                         label={field.label}
                         name={field.name}
                         required={field.required && !isEdit}
@@ -84,6 +98,13 @@ export const FieldRenderer = {
                         type="date"
                         value={fieldValue}
                         onChange={(e) => handleFieldChange(field.name, e.target?.value || "")}
+                        sx={{
+                            height: "40px",
+                            "& .MuiInputBase-root": {
+                                height: "100%",
+                            },
+                            width: field.width || "100%",
+                        }}
                     />
                 );
 
