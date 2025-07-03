@@ -8,8 +8,8 @@ import Grid from "@mui/material/Grid";
 import MDBox from "shared-ui/components/md/MDBox";
 
 function PopupWindow({children,
-                         edit=false,
                          handleClose,
+                         handleEdit,
                          width="450px",
                          maxHeight="620px",
                          top="13%",
@@ -51,8 +51,8 @@ function PopupWindow({children,
             <Grid container>
                 <Grid item xs={12}>
                     <MDBox sx={{display: "flex", justifyContent:"flex-end"}} >
-                        {edit &&
-                            <MDBox pl={2} onClick={handleClose} sx={{cursor: "pointer"}}>
+                        {handleEdit &&
+                            <MDBox pl={2} onClick={handleEdit} sx={{cursor: "pointer"}}>
                                 <Icon fontSize="small" sx={{cursor: "pointer"}}>edit</Icon>
                             </MDBox>
                         }
