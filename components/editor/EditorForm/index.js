@@ -120,7 +120,8 @@ function EditorForm({
                             <>
                             {(renderFields)({
                                 registerConfig: registerConfig,
-                                localFormData: localFormData,
+                                setFormData: setLocalFormData,
+                                formData: localFormData,
                                 handleFieldChange: handleFieldChange,
                                 entityId: entityId,
                             })}

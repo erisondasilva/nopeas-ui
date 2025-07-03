@@ -9,7 +9,11 @@ import MDAlert from "shared-ui/components/md/MDAlert";
 import EditorData from '../EditorData';
 import axiosInstance from "shared-ui/commons/axiosInstance";
 
-function EditorController({ registerConfig, subtitle, renderFilter, renderEditorForm, defaultFilterData}) {
+function EditorController({ 
+    registerConfig, subtitle, 
+    renderFilter, renderEditorForm, renderFields, 
+    defaultFilterData
+}) {
     const [tableData, setTableData] = useState({ rows: [] }); 
     const [showEditor, setShowEditor] = useState(false);
     const [selectedData, setSelectedData] = useState(null);
@@ -111,6 +115,7 @@ function EditorController({ registerConfig, subtitle, renderFilter, renderEditor
                                         handleBackClick={handleBackClick}
                                         setError={setError}
                                         setSuccess={setSuccess}
+                                        renderFields={renderFields}
                                     />
                                 )}
                             </MDBox>

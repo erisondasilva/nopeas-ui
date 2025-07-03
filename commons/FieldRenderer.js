@@ -93,26 +93,6 @@ export const FieldRenderer = {
                     <CurrencyInput
                         label={field.label}
                         name={field.name}
-                        required={field.required && !isEdit}
-                        disabled={isEdit && !isEditable}
-                        type="date"
-                        value={fieldValue}
-                        onChange={(e) => handleFieldChange(field.name, e.target?.value || "")}
-                        sx={{
-                            height: "40px",
-                            "& .MuiInputBase-root": {
-                                height: "100%",
-                            },
-                            width: field.width || "100%",
-                        }}
-                    />
-                );
-
-            case "currency":
-                return (
-                    <CurrencyInput
-                        label={field.label}
-                        name={field.name}
                         value={fieldValue}
                         onChange={handleFieldChange}
                         required={field.required && !isEdit}
