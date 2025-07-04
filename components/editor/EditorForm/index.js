@@ -134,6 +134,7 @@ function EditorForm({
                                     {FieldRenderer.renderField(
                                         field,
                                         localFormData[field.name],
+                                        field.filterByField ? {[field.filterByField]: localFormData[field.filterByField]} : {},
                                         handleFieldChange,
                                         !!entityId,
                                         registerConfig.customFieldRenderer

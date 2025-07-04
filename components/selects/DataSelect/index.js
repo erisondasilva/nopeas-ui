@@ -106,20 +106,27 @@ function DataSelect({ url, setSelected, filter, checkbox, itemsRender, ...props 
             </MDInput>
         ):
         (
-            <MDBox maxHeight={props.maxHeight? props.maxHeight : "150px"} overflow="auto" width="250px">
-                {options.map((option) => (
-                    <MDBox display="flex" alignItems="left" gap={1} pl={2} key={option.id}>
-                        <MDInput
-                            variant="standard"
-                            inputProps={{ type: "checkbox",  checked: isChecked(option.id) }}
-                            value={option.id}
-                            onChange={(e) => handleCheckboxChange(option.id, e.target.checked)}
-                        />
-                        <MDTypography variant="button" fontWeight="light">
-                             {props.fieldLabel ? option[props.fieldLabel] : option.name? option.name : option.label}
-                        </MDTypography>
-                    </MDBox>
-                ))}
+            <MDBox>
+                <MDBox>
+                    <MDTypography variant="caption" ml={1} mb={1} color="secondary">
+                        {props.label}
+                    </MDTypography>
+                </MDBox>
+                <MDBox maxHeight={props.maxHeight? props.maxHeight : "150px"} overflow="auto" width="250px">
+                    {options.map((option) => (
+                        <MDBox display="flex" alignItems="left" gap={1} pl={2} key={option.id}>
+                            <MDInput
+                                variant="standard"
+                                inputProps={{ type: "checkbox",  checked: isChecked(option.id) }}
+                                value={option.id}
+                                onChange={(e) => handleCheckboxChange(option.id, e.target.checked)}
+                            />
+                            <MDTypography variant="button" fontWeight="light">
+                                {props.fieldLabel ? option[props.fieldLabel] : option.name? option.name : option.label}
+                            </MDTypography>
+                        </MDBox>
+                    ))}
+                </MDBox>
             </MDBox>
         )}
         </>
