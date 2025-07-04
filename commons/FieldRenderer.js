@@ -25,7 +25,7 @@ import DateInput from 'shared-ui/components/inputs/DateInput';
  */
 export const FieldRenderer = {
 
-    renderField: (field, currentValue, filter, handleFieldChange, isEdit = false, customFieldRenderer) => {
+    renderField: (field, currentValue, handleFieldChange, isEdit = false, customFieldRenderer, filter) => {
 
         const fieldValue = field.type === "boolean" 
             ? null
@@ -263,7 +263,7 @@ export const FieldRenderer = {
 
             default:
                 if (customFieldRenderer) {
-                    return customFieldRenderer.renderField(field, currentValue, filter, handleFieldChange, isEdit);
+                    return customFieldRenderer.renderField(field, currentValue, handleFieldChange, isEdit, filter);
                 }
 
                 console.warn(`Unknown field type: ${field.type}. Consider adding it to CustomFieldRenderer`);

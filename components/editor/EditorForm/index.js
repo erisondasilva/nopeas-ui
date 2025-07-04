@@ -134,10 +134,10 @@ function EditorForm({
                                     {FieldRenderer.renderField(
                                         field,
                                         localFormData[field.name],
-                                        (field.filterByField ? {[field.filterByField]: localFormData[field.filterByField]} : {}),
                                         handleFieldChange,
                                         !!entityId,
-                                        registerConfig.customFieldRenderer
+                                        registerConfig.customFieldRenderer,
+                                        (field.filterByField ? {[field.filterByField]: localFormData[field.filterByField]} : {}),
                                     )}
                                 </Grid>
                                 {field.breakline && (
