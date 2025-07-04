@@ -19,6 +19,7 @@ function EditorFilter({fields, filterData, setFilterData}) {
                     {FieldRenderer.renderField(
                         field,
                         filterData[field.name],
+                        {},
                         handleFieldChange,
                     )}
                     </>

@@ -26,6 +26,7 @@ import DateInput from 'shared-ui/components/inputs/DateInput';
 export const FieldRenderer = {
 
     renderField: (field, currentValue, filter, handleFieldChange, isEdit = false, customFieldRenderer) => {
+
         const fieldValue = field.type === "boolean" 
             ? null
             : (currentValue ? currentValue 
@@ -265,11 +266,11 @@ export const FieldRenderer = {
                     return customFieldRenderer.renderField(field, currentValue, filter, handleFieldChange, isEdit);
                 }
 
-                console.warn(`Unknown field type: ${field.type}. Consider adding it to CustomFieldRenderer.`);
+                console.warn(`Unknown field type: ${field.type}. Consider adding it to CustomFieldRenderer`);
                 return (
                     <MDBox>
                         <MDTypography variant="body2" color="error">
-                            Unknown field type: {field.type}
+                            Unknown field type: {field.type}.
                         </MDTypography>
                     </MDBox>
                 );
