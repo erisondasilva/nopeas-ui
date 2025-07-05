@@ -21,7 +21,8 @@ import DateInput from 'shared-ui/components/inputs/DateInput';
  * @param {Object} currenValue - Current set value for the field (eg. from the form data)
  * @param {Function} handleFieldChange - Function to handle field value changes
  * @param {boolean} isEdit - Whether this is an edit mode (optional, default false)
- * @returns {JSX.Element} Rendered field component
+ * @param {Object} customFieldRenderer - Optional custom field renderer for specific field types
+ * @param {Object} filter - Optional filter object for select fields eg. { area: 'SOMEAREA' }
  */
 export const FieldRenderer = {
 
